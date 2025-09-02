@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Nova Tarefa{% endblock %}
+
+{% block conteudo %}
+    <form method="POST">
+        <div>
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" placeholder="Digite o título da tarefa" required>
+        </div>
+
+        <div>
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" rows="4" placeholder="Digite a descrição (opcional)"></textarea>
+        </div>
+
+        <div class="botoes-formulario">
+            <button type="submit" class="botao botao-primario">Salvar</button>
+            <a href="{{ url_for('listar_tarefas') }}" class="botao botao-voltar">← Voltar</a>
+        </div>
+
+    </form>
+{% endblock %}

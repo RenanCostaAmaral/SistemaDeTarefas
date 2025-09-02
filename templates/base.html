@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}CRUD de Tarefas{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Tarefas</h1>
+        {% block conteudo %}{% endblock %}
+    </div>
+</body>
+</html>

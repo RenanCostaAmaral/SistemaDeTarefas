@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Lista de Tarefas{% endblock %}
+
+{% block conteudo %}
+    <a href="{{ url_for('nova_tarefa') }}" class="botao-acao">➕ Nova Tarefa</a>
+
+    {% if tarefas %}
+        <div class="lista-tarefas">
+            {% for tarefa in tarefas %}
+                <div class="card-tarefa">
+                    <h3>{{ tarefa[1] }}</h3>
+                    <p>{{ tarefa[2] }}</p>
+                    <div class="acoes">
+                        <a href="{{ url_for('editar_tarefa', id=tarefa[0]) }}" class="botao botao-editar">✏️ Editar</a>
+                        <a href="{{ url_for('excluir_tarefa', id=tarefa[0]) }}" class="botao botao-excluir">🗑️ Excluir</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style="font-style: italic;">Nenhuma tarefa cadastrada ainda.</p>
+    {% endif %}
+{% endblock %}
